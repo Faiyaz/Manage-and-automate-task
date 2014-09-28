@@ -1,0 +1,7 @@
+/app/config/htaccess/*.part?
+/app/jument/config/htaccess/*.part?
+/node_modules
+/web/*.htaccess
+Thumbs.db
+.idea
+.DS_Store

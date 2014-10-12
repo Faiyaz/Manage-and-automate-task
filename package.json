@@ -23,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/Faiyaz/Task-Management/issues"
   },
-  "homepage": "https://github.com/Faiyaz/Task-Management"
+  "homepage": "https://github.com/Faiyaz/Task-Management",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-concat": "^2.4.1",
+    "gulp-watch": "^1.1.0"
+  }
 }

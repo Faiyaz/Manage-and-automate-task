@@ -1,9 +1,9 @@
+// This file uses native gulp.watch
 // Include Gulp
 var gulp = require('gulp');
 
 // Include plug-ins
 var concat = require('gulp-concat');
-var watch = require('gulp-watch');
 
 // Setup directories
 var jumentDir = 'app/jument/config/htaccess/';
@@ -26,11 +26,13 @@ gulp.task('www_concat', function() {
 
 // Watch for all events in specified {directories}/{files}, then trigger appropriate task
 gulp.task('watch', function () {
-    watch([jumentDir + '**/admin.part?', appDir + '**/admin.part?'], function(){
+    gulp.watch([jumentDir + '**/admin.part?', appDir + '**/admin.part?'], function(event) {
+        console.log('File: ' + event.path + ' was ' + event.type);
         gulp.start('admin_concat');
     });
 
-    watch([jumentDir + '**/www.part?', appDir + '**/www.part?'], function(){
+    gulp.watch([jumentDir + '**/www.part?', appDir + '**/www.part?'], function(event) {
+        console.log('File: ' + event.path + ' was ' + event.type);
         gulp.start('www_concat');
     });
 });
